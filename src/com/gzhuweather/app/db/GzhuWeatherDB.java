@@ -4,28 +4,28 @@ package com.gzhuweather.app.db;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.gzhuweather.app.model.City;
-import com.gzhuweather.app.model.County;
-import com.gzhuweather.app.model.Province;
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+
+import com.gzhuweather.app.model.City;
+import com.gzhuweather.app.model.County;
+import com.gzhuweather.app.model.Province;
 
 public class GzhuWeatherDB {
 
 	/**
 	 * 数据库名
 	 */
-	public static final String DB_NAME = "cool_weather";
+	public static final String DB_NAME = "gzhu_weather";
 
 	/**
 	 * 数据库版本
 	 */
 	public static final int VERSION = 1;
 
-	private static GzhuWeatherDB coolWeatherDB;
+	private static GzhuWeatherDB gzhuWeatherDB;
 
 	private SQLiteDatabase db;
 
@@ -42,10 +42,10 @@ public class GzhuWeatherDB {
 	 * 获取CoolWeatherDB的实例。
 	 */
 	public synchronized static GzhuWeatherDB getInstance(Context context) {
-		if (coolWeatherDB == null) {
-			coolWeatherDB = new GzhuWeatherDB(context);
+		if (gzhuWeatherDB == null) {
+			gzhuWeatherDB = new GzhuWeatherDB(context);
 		}
-		return coolWeatherDB;
+		return gzhuWeatherDB;
 	}
 
 	/**
